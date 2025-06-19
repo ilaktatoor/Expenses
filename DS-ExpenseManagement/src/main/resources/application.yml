@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://userver.lan:5432/expenses
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
