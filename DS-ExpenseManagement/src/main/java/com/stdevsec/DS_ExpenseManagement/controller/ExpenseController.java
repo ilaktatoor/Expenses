@@ -43,4 +43,10 @@ public class ExpenseController {
         return expenseService.getWeeklySummary();
     }
 
+    @PostMapping("/week/mark-even")
+    public void markWeekAsEven() {
+        expenseService.markWeekAsEven();
+    }
+
+
 }

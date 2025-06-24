@@ -11,5 +11,5 @@ public interface ExpenseService {
     ExpenseDto save(ExpenseDto dto);
     void delete(Long id);
     WeeklySummaryDTO getWeeklySummary();
-
+    void markWeekAsEven();
 }

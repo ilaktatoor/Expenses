@@ -21,6 +21,7 @@ public class ExpenseMapper {
                 .amount(entity.getAmount())
                 .category(entity.getCategory())
                 .date(entity.getDate())
+                .userId(entity.getUser() != null ? entity.getUser().getId() : null)
                 .build();
     }
 }
