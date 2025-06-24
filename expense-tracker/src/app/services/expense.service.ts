@@ -70,4 +70,16 @@ export class ExpenseService {
     return this.http.get<WeeklySummary>(`${this.apiUrl}/week/summary`);
   }
 
+  getWeeklyTotals(): Observable<{ weekLabel: string; total: number }[]> {
+  return this.http.get<{ weekLabel: string; total: number }[]>(`${this.apiUrl}/summary/weeks`);
+}
+
+getUserExpenses(period: string): Observable<{ userName: string; total: number }[]> {
+  return this.http.get<{ userName: string; total: number }[]>(`${this.apiUrl}/summary/users?period=${period}`);
+}
+
+getCategoryExpenses(period: string): Observable<{ category: string; total: number }[]> {
+  return this.http.get<{ category: string; total: number }[]>(`${this.apiUrl}/summary/categories?period=${period}`);
+}
+
 }

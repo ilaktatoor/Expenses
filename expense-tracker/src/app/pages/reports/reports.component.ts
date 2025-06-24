@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
-import { NavbarComponent } from '../../componets/navbar/navbar.component';
 
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [CommonModule,NavbarComponent],
+  imports: [CommonModule],
   templateUrl: './reports.component.html',
   styleUrl: './reports.component.css'
 })
