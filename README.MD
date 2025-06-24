@@ -52,7 +52,7 @@ A Spring Boot REST API to manage shared weekly expenses between two users. Suppo
   "even": false
 }
 
-
+```
 docker build -t expense-tracker-backend .
 
 docker run --name expense-api \
