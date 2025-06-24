@@ -1,0 +1,35 @@
+<nav class="bg-gray-800 text-white px-6 py-4 flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0 shadow-md">
+  <div class="text-2xl font-bold text-indigo-400">💸 Expense Tracker</div>
+  <ul class="flex flex-col md:flex-row gap-4">
+    <li>
+      <a
+        routerLink="/"
+        routerLinkActive="underline font-semibold"
+        class="hover:text-indigo-400 transition"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/report"
+        routerLinkActive="underline font-semibold"
+        class="hover:text-indigo-400 transition"
+      >
+        Report
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/users"
+        routerLinkActive="underline font-semibold"
+        class="hover:text-indigo-400 transition"
+      >
+        Users
+      </a>
+    </li>
+  </ul>
+</nav>
+
+

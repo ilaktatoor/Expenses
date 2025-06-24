@@ -1,0 +1,27 @@
+<div class="bg-gray-800 p-4 rounded-lg shadow-md text-gray-200">
+  <h2 class="text-xl font-semibold mb-2 text-white">This Week's Expenses</h2>
+
+  <ul *ngIf="expenses.length; else noData">
+    <li
+      *ngFor="let expense of expenses"
+      class="border-b border-gray-600 py-2 flex justify-between items-center"
+    >
+      <div>
+        <span class="font-semibold text-white">{{ expense.description }}</span> -
+        ${{ expense.amount }}
+        <span class="text-sm text-gray-400">({{ expense.category }})</span>
+      </div>
+      <button
+        (click)="deleteExpense(expense)"
+        class="text-red-400 hover:underline"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+
+  <ng-template #noData>
+    <p class="text-gray-400">No expenses this week.</p>
+  </ng-template>
+</div>
+

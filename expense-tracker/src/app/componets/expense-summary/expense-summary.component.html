@@ -1,0 +1,50 @@
+<div
+  *ngIf="summary; else noData"
+  class="space-y-4 bg-gray-800 p-4 rounded-lg shadow-md text-gray-200"
+>
+  <h2 class="text-xl font-semibold text-white">Weekly Summary</h2>
+
+  <p><strong>Total:</strong> ${{ summary.totalWeekAmount }}</p>
+
+  <div class="space-y-1">
+    <p>
+      <strong>{{ summary.user1Name }}:</strong> ${{ summary.user1Total }}
+    </p>
+    <p>
+      <strong>{{ summary.user2Name }}:</strong> ${{ summary.user2Total }}
+    </p>
+  </div>
+
+  <div *ngIf="!summary.even" class="text-red-400 font-semibold">
+    {{
+      summary.user1Total > summary.user2Total
+        ? summary.user2Name +
+          " owes $" +
+          (summary.totalWeekAmount / 2 - summary.user2Total) +
+          " to " +
+          summary.user1Name
+        : summary.user1Name +
+          " owes $" +
+          (summary.totalWeekAmount / 2 - summary.user1Total) +
+          " to " +
+          summary.user2Name
+    }}
+  </div>
+
+  <button
+    *ngIf="!summary.even"
+    (click)="markAsEven()"
+    class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded shadow"
+  >
+    Mark as Even
+  </button>
+
+  <div *ngIf="summary.even" class="text-green-400 font-semibold">
+    ✅ This week is settled.
+  </div>
+</div>
+
+<ng-template #noData>
+  <p class="text-gray-400">No summary available.</p>
+</ng-template>
+

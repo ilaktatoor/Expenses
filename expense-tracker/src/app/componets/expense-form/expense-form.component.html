@@ -1,0 +1,55 @@
+<form (ngSubmit)="submit()" class="bg-gray-800 p-4 rounded-lg shadow-md space-y-4 text-gray-200">
+  <h2 class="text-xl font-semibold text-white">Add Expense</h2>
+
+  <div class="flex flex-col gap-2">
+    <input
+      class="bg-gray-700 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-400"
+      [(ngModel)]="expense.description"
+      name="description"
+      placeholder="Description"
+      required
+    />
+    <input
+      class="bg-gray-700 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-400"
+      [(ngModel)]="expense.amount"
+      name="amount"
+      type="number"
+      placeholder="Amount"
+      required
+    />
+    <input
+      class="bg-gray-700 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-400"
+      [(ngModel)]="expense.category"
+      name="category"
+      placeholder="Category"
+      required
+    />
+    <input
+      class="bg-gray-700 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-400"
+      [(ngModel)]="expense.date"
+      name="date"
+      type="date"
+      required
+    />
+
+    <label class="block text-sm text-gray-300 mb-1">User</label>
+    <select
+      [(ngModel)]="selectedUserId"
+      class="bg-gray-700 text-white border border-gray-600 rounded px-3 py-2 mb-3 focus:outline-none focus:ring focus:border-blue-400"
+      name="user"
+    >
+      <option [value]="0" disabled selected>Select a user</option>
+      <option *ngFor="let user of users" [value]="user.id">
+        {{ user.name }}
+      </option>
+    </select>
+  </div>
+
+  <button
+    type="submit"
+    class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition"
+  >
+    Add
+  </button>
+</form>
+
